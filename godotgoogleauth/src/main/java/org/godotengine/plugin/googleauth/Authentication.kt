@@ -74,7 +74,6 @@ class Authentication(private val plugin: GoogleAuthPlugin) {
 				if (idToken != null) {
 					Log.d(TAG, "Google Sign-In success: ${account.email}")
 					plugin.emitGodotSignal("auth_success", idToken)
-					getUserInfo()
 				} else {
 					Log.w(TAG, "No ID token returned.")
 					plugin.emitGodotSignal("auth_failure", "No ID token returned.")
